@@ -9,6 +9,7 @@ export const courseDetails = {
   offerPrice: '₹499',
 };
 
+
 export const mactPayment = {
   title: 'Motor Accident Claims Practice — 3 Hours Masterclass',
   amount: 499,
