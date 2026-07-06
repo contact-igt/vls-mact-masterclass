@@ -20,7 +20,7 @@ const getUTM = (key) => {
 };
 
 const handleGoogleSheetForm = async (formData, retries = 3, delay = 1500) => {
-  const sheetUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
+  const sheetUrl = "https://script.google.com/macros/s/AKfycbzjGS_s5Mac0FZh5QM8b4P9oih4YAzTk3695yE1AXymcGk9cxTdrbsyCKlbQLYd572N/exec";
 
   if (!sheetUrl) {
     return false;
