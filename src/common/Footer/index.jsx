@@ -7,17 +7,10 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div className="footer-about">
-            <img src="/assets/images/vls_logo.png" alt="VLS Law Academy" />
+            <img src="/images/vls_logo.png" alt="VLS Law Academy" />
             <p>
               VLS Law Academy is a coaching institute for law graduates, assisting them to scale up in Judicial Services exams, Law optional subject (IAS/Civil Services exam), and UGC examinations (Junior Research Fellowship / Lectureship for Law).
             </p>
-            <div className="footer-socials mt-24">
-              {socialLinks.map((link) => (
-                <a href={link.href} aria-label={link.label} key={link.href} target="_blank" rel="noopener noreferrer">
-                  {link.text}
-                </a>
-              ))}
-            </div>
           </div>
           <div className="footer-col">
             <h5>Explore</h5>
@@ -28,6 +21,17 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="footer-col">
+            <h5>Follow us on</h5>
+            <div className="footer-socials">
+              {socialLinks.map((link) => (
+                <a href={link.href} aria-label={link.label} key={link.href} target="_blank" rel="noopener noreferrer">
+                  <img src={link.image} alt="" />
+                  <span>{link.label}</span>
+                </a>
+              ))}
+            </div>
           </div>
           <div className="footer-col">
             <h5>Contact Us</h5>

@@ -10,11 +10,12 @@ import '@/styles/globals.css';
 export default function App({ Component, pageProps }) {
   useUTMSource();
 
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
+  const clarityId = 'xi3toa9hw6';
+  const metaPixelId = '1009093435350780';
 
   return (
     <>
+      {/* GTM disabled per request.
       {gtmId ? (
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -24,6 +25,20 @@ export default function App({ Component, pageProps }) {
           })(window,document,'script','dataLayer','${gtmId}');`}
         </Script>
       ) : null}
+      */}
+
+      <Script id="meta-pixel" strategy="afterInteractive">
+        {`!function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '${metaPixelId}');
+        fbq('track', 'PageView');`}
+      </Script>
 
       {clarityId ? (
         <Script id="clarity" strategy="afterInteractive">
