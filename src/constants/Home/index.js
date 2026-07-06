@@ -165,8 +165,8 @@ export const videoTestimonials = [
 ];
 
 export const socialLinks = [
-  { label: 'YouTube', href: 'https://www.youtube.com/@VLSLAWACADEMY', text: '▶' },
-  { label: 'Instagram', href: 'https://www.instagram.com/vlslawacademy/', text: '📷' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/105212369/', text: 'in' },
-  { label: 'Facebook', href: 'https://www.facebook.com/vlslawacademy', text: 'f' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@VLSLAWACADEMY', image: '/images/youtube.png' },
+  { label: 'Facebook', href: 'https://www.facebook.com/vlslawacademy', image: '/images/facebook.png' },
+  { label: 'Instagram', href: 'https://www.instagram.com/vlslawacademy/', image: '/images/instagram.png' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/105212369/', image: '/images/linkedin.png' },
 ];
