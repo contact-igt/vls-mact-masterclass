@@ -11,7 +11,7 @@ export const courseDetails = {
 
 export const mactPayment = {
   title: 'Motor Accident Claims Practice — 3 Hours Masterclass',
-  amount: 1,
+  amount: 499,
   currency: 'INR',
   programmDate: '2026-07-12',
   pageName: 'mact-masterclass',
