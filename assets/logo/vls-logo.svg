@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72" width="220" height="72">
+  <!-- Balance scale icon -->
+  <g transform="translate(4,4)">
+    <!-- Center pole -->
+    <rect x="31" y="8" width="2" height="48" fill="#1a1a1a" rx="1"/>
+    <!-- Top crossbar -->
+    <rect x="8" y="8" width="48" height="2.5" fill="#1a1a1a" rx="1"/>
+    <!-- Center pin -->
+    <circle cx="32" cy="7" r="3.5" fill="#CC0000"/>
+    <!-- Left chain -->
+    <line x1="12" y1="10" x2="12" y2="22" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- Right chain -->
+    <line x1="52" y1="10" x2="52" y2="22" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- Left pan -->
+    <path d="M4 22 Q12 28 20 22" stroke="#CC0000" stroke-width="2" fill="none"/>
+    <!-- Right pan -->
+    <path d="M44 22 Q52 28 60 22" stroke="#CC0000" stroke-width="2" fill="none"/>
+    <!-- Base -->
+    <path d="M22 56 L42 56 L38 52 L26 52 Z" fill="#1a1a1a"/>
+    <!-- Base foot -->
+    <rect x="18" y="56" width="28" height="3" fill="#1a1a1a" rx="1.5"/>
+  </g>
+  <!-- VLS text -->
+  <text x="78" y="38" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="28" fill="#CC0000" letter-spacing="-0.5">VLS</text>
+  <text x="118" y="38" font-family="Montserrat,Arial,sans-serif" font-weight="700" font-size="24" fill="#1a1a1a"> Law</text>
+  <text x="78" y="56" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="16" fill="#555" letter-spacing="2">Academy</text>
+</svg>

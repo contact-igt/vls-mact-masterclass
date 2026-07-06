@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#CC0000" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1a0a00" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="700" fill="#1a0a00"/>
+  <rect width="900" height="700" fill="url(#g)"/>
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#fff" stroke-width="1">
+    <line x1="90" y1="0" x2="90" y2="700"/><line x1="180" y1="0" x2="180" y2="700"/><line x1="270" y1="0" x2="270" y2="700"/><line x1="360" y1="0" x2="360" y2="700"/><line x1="450" y1="0" x2="450" y2="700"/><line x1="540" y1="0" x2="540" y2="700"/><line x1="630" y1="0" x2="630" y2="700"/><line x1="720" y1="0" x2="720" y2="700"/><line x1="810" y1="0" x2="810" y2="700"/>
+    <line x1="0" y1="70" x2="900" y2="70"/><line x1="0" y1="140" x2="900" y2="140"/><line x1="0" y1="210" x2="900" y2="210"/><line x1="0" y1="280" x2="900" y2="280"/><line x1="0" y1="350" x2="900" y2="350"/><line x1="0" y1="420" x2="900" y2="420"/><line x1="0" y1="490" x2="900" y2="490"/><line x1="0" y1="560" x2="900" y2="560"/><line x1="0" y1="630" x2="900" y2="630"/>
+  </g>
+  <!-- Icon -->
+  <text x="450" y="290" font-size="116" text-anchor="middle" dominant-baseline="middle">📚</text>
+  <!-- Red accent line -->
+  <rect x="370" y="360" width="160" height="3" fill="#CC0000" rx="2"/>
+  <!-- Label -->
+  <text x="450" y="400" font-family="Montserrat,Arial,sans-serif" font-weight="800"
+        font-size="38" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">VLS Law Academy</text>
+  <!-- Sub -->
+  <text x="450" y="440" font-family="Montserrat,Arial,sans-serif" font-weight="400"
+        font-size="25" fill="#CC0000" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">CHENNAI | PRACTICAL TRAINING</text>
+  <!-- Corner VLS mark -->
+  <text x="24" y="36" font-family="Montserrat,Arial,sans-serif" font-weight="900"
+        font-size="29" fill="#CC0000" opacity="0.6">VLS</text>
+</svg>

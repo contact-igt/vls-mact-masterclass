@@ -1,0 +1,23 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.popup {
+  position: relative;
+  width: min(560px, 100%);
+  background: var(--black);
+  border-radius: var(--r);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+}
+
+.video {
+  width: min(920px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

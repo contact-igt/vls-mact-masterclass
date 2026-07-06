@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#CC0000" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0d0d0d" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="#0d0d0d"/>
+  <rect width="1920" height="1080" fill="url(#g)"/>
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#fff" stroke-width="1">
+    <line x1="192" y1="0" x2="192" y2="1080"/><line x1="384" y1="0" x2="384" y2="1080"/><line x1="576" y1="0" x2="576" y2="1080"/><line x1="768" y1="0" x2="768" y2="1080"/><line x1="960" y1="0" x2="960" y2="1080"/><line x1="1152" y1="0" x2="1152" y2="1080"/><line x1="1344" y1="0" x2="1344" y2="1080"/><line x1="1536" y1="0" x2="1536" y2="1080"/><line x1="1728" y1="0" x2="1728" y2="1080"/>
+    <line x1="0" y1="108" x2="1920" y2="108"/><line x1="0" y1="216" x2="1920" y2="216"/><line x1="0" y1="324" x2="1920" y2="324"/><line x1="0" y1="432" x2="1920" y2="432"/><line x1="0" y1="540" x2="1920" y2="540"/><line x1="0" y1="648" x2="1920" y2="648"/><line x1="0" y1="756" x2="1920" y2="756"/><line x1="0" y1="864" x2="1920" y2="864"/><line x1="0" y1="972" x2="1920" y2="972"/>
+  </g>
+  <!-- Icon -->
+  <text x="960" y="480" font-size="180" text-anchor="middle" dominant-baseline="middle">⚖️</text>
+  <!-- Red accent line -->
+  <rect x="880" y="550" width="160" height="3" fill="#CC0000" rx="2"/>
+  <!-- Label -->
+  <text x="960" y="590" font-family="Montserrat,Arial,sans-serif" font-weight="800"
+        font-size="60" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Motor Accident Law</text>
+  <!-- Sub -->
+  <text x="960" y="630" font-family="Montserrat,Arial,sans-serif" font-weight="400"
+        font-size="38" fill="#CC0000" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">JUSTICE | COURTS | MACT</text>
+  <!-- Corner VLS mark -->
+  <text x="24" y="36" font-family="Montserrat,Arial,sans-serif" font-weight="900"
+        font-size="45" fill="#CC0000" opacity="0.6">VLS</text>
+</svg>

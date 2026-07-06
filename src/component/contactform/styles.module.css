@@ -1,0 +1,115 @@
+.errorText {
+  color: #ff8080;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+
+.mobileInputWrap {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  align-items: center;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.mobileInputWrap:focus-within {
+  border-color: var(--red);
+}
+
+.mobileInputWrap input {
+  border: none;
+  border-radius: 0;
+}
+
+.countryCode {
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  border-right: 1px solid #333;
+}
+
+.instructionPopup,
+.processingPopup {
+  width: 100%;
+  padding: 30px;
+  color: var(--dk);
+  background: var(--white);
+  border-radius: var(--r);
+  text-align: center;
+}
+
+.instructionPopup h3,
+.processingPopup h3 {
+  color: var(--dk);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.instructionPopup p,
+.processingPopup p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.agreeRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--dk);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 18px 0 22px;
+}
+
+.agreeRow input {
+  width: 16px;
+  height: 16px;
+}
+
+.popupActions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.secondaryButton,
+.payButton {
+  border: none;
+  border-radius: 4px;
+  padding: 12px 18px;
+  font-family: var(--ff-head);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  color: var(--dk);
+  background: #eee;
+}
+
+.payButton {
+  color: var(--white);
+  background: var(--red);
+}
+
+.payButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.processingPopup {
+  text-align: center;
+}

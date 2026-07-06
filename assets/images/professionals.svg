@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 780" width="900" height="780">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#CC0000" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0a1a0a" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="780" fill="#0a1a0a"/>
+  <rect width="900" height="780" fill="url(#g)"/>
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#fff" stroke-width="1">
+    <line x1="90" y1="0" x2="90" y2="780"/><line x1="180" y1="0" x2="180" y2="780"/><line x1="270" y1="0" x2="270" y2="780"/><line x1="360" y1="0" x2="360" y2="780"/><line x1="450" y1="0" x2="450" y2="780"/><line x1="540" y1="0" x2="540" y2="780"/><line x1="630" y1="0" x2="630" y2="780"/><line x1="720" y1="0" x2="720" y2="780"/><line x1="810" y1="0" x2="810" y2="780"/>
+    <line x1="0" y1="78" x2="900" y2="78"/><line x1="0" y1="156" x2="900" y2="156"/><line x1="0" y1="234" x2="900" y2="234"/><line x1="0" y1="312" x2="900" y2="312"/><line x1="0" y1="390" x2="900" y2="390"/><line x1="0" y1="468" x2="900" y2="468"/><line x1="0" y1="546" x2="900" y2="546"/><line x1="0" y1="624" x2="900" y2="624"/><line x1="0" y1="702" x2="900" y2="702"/>
+  </g>
+  <!-- Icon -->
+  <text x="450" y="330" font-size="130" text-anchor="middle" dominant-baseline="middle">👥</text>
+  <!-- Red accent line -->
+  <rect x="370" y="400" width="160" height="3" fill="#CC0000" rx="2"/>
+  <!-- Label -->
+  <text x="450" y="440" font-family="Montserrat,Arial,sans-serif" font-weight="800"
+        font-size="43" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Legal Professionals</text>
+  <!-- Sub -->
+  <text x="450" y="480" font-family="Montserrat,Arial,sans-serif" font-weight="400"
+        font-size="27" fill="#CC0000" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">ADVOCATES | JUDGES | PRACTITIONERS</text>
+  <!-- Corner VLS mark -->
+  <text x="24" y="36" font-family="Montserrat,Arial,sans-serif" font-weight="900"
+        font-size="32" fill="#CC0000" opacity="0.6">VLS</text>
+</svg>

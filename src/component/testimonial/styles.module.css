@@ -1,0 +1,95 @@
+.testimonalsec {
+  background: var(--ow);
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+.titleWrap {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.testimonialContainer {
+  margin-top: 40px;
+}
+
+.sliderWrapper {
+  margin: 0 -10px;
+}
+
+.sliderWrapper :global(.slick-prev),
+.sliderWrapper :global(.slick-next) {
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+}
+
+.sliderWrapper :global(.slick-prev) {
+  left: -4px;
+}
+
+.sliderWrapper :global(.slick-next) {
+  right: -4px;
+}
+
+.sliderWrapper :global(.slick-prev::before),
+.sliderWrapper :global(.slick-next::before) {
+  color: var(--red);
+  font-size: 34px;
+  opacity: 1;
+}
+
+.slideWrapperItem {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.ctaWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.closeButton {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--red);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.videoPlayer {
+  display: block;
+  width: 100%;
+  height: min(500px, 70vh);
+  border-radius: var(--r);
+  background: var(--black);
+}
+
+@media (max-width: 640px) {
+  .testimonalsec {
+    padding: 64px 0;
+  }
+
+  .sliderWrapper :global(.slick-prev) {
+    left: 0;
+  }
+
+  .sliderWrapper :global(.slick-next) {
+    right: 0;
+  }
+}
