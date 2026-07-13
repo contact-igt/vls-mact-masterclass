@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Popup from '@/common/Popup';
 import { courseDetails, mactPayment } from '@/constants/Home';
+import { submitMactRegistration } from '@/service/MactRegistration';
 import { safeSetPaymentDetails } from '@/utils/paymentStorage';
 import styles from './styles.module.css';
 
@@ -16,36 +17,6 @@ const getUTM = (key) => {
     return window.localStorage.getItem(key) || '';
   } catch {
     return '';
-  }
-};
-
-const handleGoogleSheetForm = async (formData, retries = 3, delay = 1500) => {
-  const sheetUrl = "https://script.google.com/macros/s/AKfycbzjGS_s5Mac0FZh5QM8b4P9oih4YAzTk3695yE1AXymcGk9cxTdrbsyCKlbQLYd572N/exec";
-
-  if (!sheetUrl) {
-    return false;
-  }
-
-  try {
-    const response = await fetch(sheetUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: formData.toString(),
-    });
-
-    if (response.ok) {
-      return true;
-    }
-
-    throw new Error('Sheet responded with non-OK status');
-  } catch (error) {
-    if (retries <= 1) {
-      console.error('Google Sheet failed permanently:', error);
-      return false;
-    }
-
-    await new Promise((resolve) => setTimeout(resolve, delay));
-    return handleGoogleSheetForm(formData, retries - 1, delay);
   }
 };
 
@@ -79,6 +50,8 @@ const readApiError = async (response) => {
     return 'Payment order could not be created.';
   }
 };
+
+const getIsoTimestamp = () => new Date().toISOString();
 
 export default function ContactForm({ ipAddress = '' }) {
   const router = useRouter();
@@ -121,14 +94,15 @@ export default function ContactForm({ ipAddress = '' }) {
   const createPaymentPayload = (values, order, response) => ({
     name: values.name || '',
     email: values.email,
-    mobile: `+91${values.mobile}`,
+    mobile: values.mobile,
     amount: order.amount / 100,
+    registered_date: getIsoTimestamp(),
     programm_date: mactPayment.programmDate,
     razorpay_order_id: response.razorpay_order_id || '',
     razorpay_payment_id: response.razorpay_payment_id || '',
     razorpay_signature: response.razorpay_signature || '',
     payment_status: 'paid',
-    captured: response.captured || '',
+    captured: true,
     page_name: mactPayment.pageName,
     ip_address: ipAddress,
     utm_source: getUTM('utm_source'),
@@ -148,11 +122,6 @@ export default function ContactForm({ ipAddress = '' }) {
     window.dataLayer?.push({ event: 'mact_payment_success', payment_id: response.razorpay_payment_id });
 
     const apiPayload = createPaymentPayload(values, order, response);
-    const sheetParams = new URLSearchParams();
-
-    Object.keys(apiPayload).forEach((key) => {
-      sheetParams.append(key, apiPayload[key] ?? '');
-    });
 
     // try {
     //   await handleWhatsappMessage(
@@ -168,9 +137,29 @@ export default function ContactForm({ ipAddress = '' }) {
     //   console.error('WhatsApp message failed:', error);
     // }
 
-    await handleGoogleSheetForm(sheetParams);
-    safeSetPaymentDetails(apiPayload);
-    window.location.href = '/thank-you';
+    try {
+      await submitMactRegistration({
+        name: apiPayload.name,
+        mobile: apiPayload.mobile,
+        email: apiPayload.email || null,
+        amount: apiPayload.amount ? Number(apiPayload.amount) : null,
+        registered_date: apiPayload.registered_date,
+        programm_date: apiPayload.programm_date,
+        payment_status: apiPayload.payment_status || null,
+        captured: typeof apiPayload.captured === 'boolean' ? apiPayload.captured : null,
+        page_name: apiPayload.page_name || 'mact-master-class',
+        ip_address: apiPayload.ip_address || null,
+        utm_source: apiPayload.utm_source || null,
+      });
+
+      safeSetPaymentDetails(apiPayload);
+      window.location.href = '/thank-you';
+    } catch (error) {
+      setProcessing(false);
+      setFormError(error.message || 'Registration could not be completed after payment.');
+      window.dataLayer?.push({ event: 'mact_registration_failed', reason: error.message || 'registration_failed' });
+      router.replace('/error');
+    }
   };
 
   const openRazorpay = async () => {
@@ -189,7 +178,7 @@ export default function ContactForm({ ipAddress = '' }) {
       const orderResponse = await fetch('/api/create-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: mactPayment.amount }),
+        body: JSON.stringify({ amount: 499 }),
       });
 
       if (!orderResponse.ok) {

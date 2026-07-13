@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Valid amount is required' });
   }
 
-  const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
-  const secret = process.env.NEXT_PUBLIC_RAZORPAY_KEY_SECRET;
+  const keyId = process.env.RAZORPAY_KEY_ID || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID;
+  const secret = process.env.RAZORPAY_KEY_SECRET || process.env.NEXT_PUBLIC_RAZORPAY_KEY_SECRET;
 
   if (!keyId || !secret) {
     return res.status(500).json({ error: 'Razorpay credentials missing' });
